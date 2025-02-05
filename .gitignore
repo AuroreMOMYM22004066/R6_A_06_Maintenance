@@ -13,3 +13,9 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+## Ide
+/idea/
+/vscode/
+.idea/
+.vscode/
