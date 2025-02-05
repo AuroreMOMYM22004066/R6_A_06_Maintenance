@@ -1,61 +1,56 @@
 # Projet R6_A_06_Maintenance
 
-## Mise en contexte 
-Reprise d'un projet existant en PHP et faire sa maintenance.
+## Description
+Reprise et maintenance d'un projet existant en PHP.
 
 ## Technologies Utilisées
 - PHP
+- Symfony
 - MySQL
 - Composer
-- Symfony
 
 ## Prérequis
-- PHP >= 7.4
+- PHP ≥ 7.4
 - Composer
 - MySQL
 
 ## Installation
 
-1. Cloner le dépôt :
+1. **Cloner le dépôt**
     ```bash
     git clone https://github.com/yourusername/R6_A_06_Maintenance.git
     cd R6_A_06_Maintenance
     ```
 
-2. Installer les dépendances :
+2. **Installer les dépendances**
     ```bash
     composer install
     ```
 
-3. Configurer la base de données :
+3. **Configurer la base de données**
+    Modifier le fichier .env avec vos informations de base de données
+
+
+4. **Créer et mettre à jour la base de données**
     ```bash
-    cp .env.example .env
-    # Mettez à jour .env avec votre configuration de base de données
     symfony console doctrine:database:create
     symfony console doctrine:migrations:migrate
     symfony console doctrine:fixtures:load
     ```
 
-4. Démarrer le serveur de développement :
+5. **Démarrer le serveur de développement**
     ```bash
-    symfony server 
+    symfony server
     ```
 
 ## Utilisation
-- Pour exécuter les tests :
-    ```bash
-    php bin/phpunit
-    ```
 
-- Pour générer une nouvelle migration :
+- **Générer une nouvelle migration**
     ```bash
     symfony console make:migration
     ```
 
-- Pour exécuter les migrations de base de données :
+- **Exécuter les migrations de base de données**
     ```bash
     symfony console doctrine:migrations:migrate
     ```
-
-
-
