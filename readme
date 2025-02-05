@@ -18,7 +18,7 @@ Reprise et maintenance d'un projet existant en PHP.
 
 1. **Cloner le dépôt**
     ```bash
-    git clone https://github.com/yourusername/R6_A_06_Maintenance.git
+    git clone https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance.git
     cd R6_A_06_Maintenance
     ```
 
