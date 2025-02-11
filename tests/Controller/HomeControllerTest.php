@@ -29,7 +29,4 @@ final class HomeControllerTest extends WebTestCase
 
         self::assertResponseStatusCodeSame(405);
     }
-
-
-
 }
