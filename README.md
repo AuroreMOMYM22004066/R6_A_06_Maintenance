@@ -34,6 +34,7 @@ Reprise et maintenance d'un projet existant en PHP.
 4. **Créer et mettre à jour la base de données**
     ```bash
     symfony console doctrine:database:create
+    symfony console make:migrations
     symfony console doctrine:migrations:migrate
     symfony console doctrine:fixtures:load
     ```
