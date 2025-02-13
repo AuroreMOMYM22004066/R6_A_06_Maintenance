@@ -2,8 +2,8 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Region;
 use App\Entity\Departement;
+use App\Entity\Region;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
