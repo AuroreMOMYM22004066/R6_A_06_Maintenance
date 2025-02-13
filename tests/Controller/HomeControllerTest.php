@@ -17,7 +17,7 @@ final class HomeControllerTest extends WebTestCase
     public function testIndexWithInvalidRoute(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/invalid-route');  // Update to a valid or intentionally invalid route
+        $client->request('GET', '/home-invalid');
 
         self::assertResponseStatusCodeSame(404);
     }
