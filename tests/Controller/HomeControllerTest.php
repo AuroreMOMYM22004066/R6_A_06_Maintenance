@@ -13,10 +13,11 @@ final class HomeControllerTest extends WebTestCase
 
         self::assertResponseIsSuccessful();
     }
+
     public function testIndexWithInvalidRoute(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/home');
+        $client->request('GET', '/home-invalid');
 
         self::assertResponseStatusCodeSame(404);
     }
