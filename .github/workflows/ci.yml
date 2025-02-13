@@ -15,13 +15,14 @@ jobs:
         with:
           php-version: '8.2'
 
-      - name: Check PHP version
-        run: php -v
+      - name: Create .env file from secret
+        run: echo "${{ secrets.ENV_SECRET }}" > .env
 
       - name: Install dependencies
-        run: |
-          composer install --prefer-dist --no-progress --no-suggest
-          composer global require phpunit/phpunit
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Run PHP CS Fixer
         run: vendor/bin/php-cs-fixer fix --dry-run --diff
+
+      - name: Run cache clear
+        run: php bin/console cache:clear
