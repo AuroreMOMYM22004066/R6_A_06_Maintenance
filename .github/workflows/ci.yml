@@ -26,3 +26,6 @@ jobs:
 
       - name: Run cache clear
         run: php bin/console cache:clear
+
+      - name: Run tests
+        run: vendor/bin/phpunit
