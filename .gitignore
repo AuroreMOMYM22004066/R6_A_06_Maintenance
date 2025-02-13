@@ -2,7 +2,6 @@
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.
-.env
 /.env.local.php
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
@@ -25,4 +24,4 @@
 ###> friendsofphp/php-cs-fixer ###
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
-###< friendsofphp/php-cs-fixer ###
+###< friendsofphp/php-cs-fixer ###.env
