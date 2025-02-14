@@ -12,10 +12,15 @@
 
 ## Description
 Reprise et maintenance d'un projet existant en PHP. <br>
-Récupérer le projet original :
+- Récupérer le projet original :
 ```bash
 git clone https://github.com/AuroreMOMYM22004066/Ugsel_Project
 ```
+<br>
+
+- Documentation du projet original :<br>
+<a href="https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance/blob/master/UgselWeb-Documentation.pdf">guide utilisateur</a> <br>
+<a href="https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance/blob/master/UgselWeb-Documentation-Admin.pdf">guide admin</a>
 
 
 
