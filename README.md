@@ -57,8 +57,9 @@ Les autre branche dependande de master pour le dev comme database ou styles qui 
 
 3. **Configurer la base de données**
     D'abord crée le .env
-    Modifier le fichier .env avec vos informations de base de données
-    
+    Modifier le fichier .env avec vos informations de base de données voici la docs pour ajoute se qu il faut au .env
+   https://symfony.com/doc/current/configuration.html
+
     Pour ce qui est des test c est pareil faut crée le .env.test et mettre vottre bd
 
 
