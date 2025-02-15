@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DepartementRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DepartementRepository::class)]
@@ -21,6 +23,17 @@ class Departement
 
     #[ORM\ManyToOne(inversedBy: 'departements')]
     private ?Region $Region = null;
+
+    /**
+     * @var Collection<int, Etablissement>
+     */
+    #[ORM\OneToMany(targetEntity: Etablissement::class, mappedBy: 'departement')]
+    private Collection $etablissements;
+
+    public function __construct()
+    {
+        $this->etablissements = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +72,36 @@ class Departement
     public function setRegion(?Region $Region): static
     {
         $this->Region = $Region;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Etablissement>
+     */
+    public function getEtablissements(): Collection
+    {
+        return $this->etablissements;
+    }
+
+    public function addEtablissement(Etablissement $etablissement): static
+    {
+        if (!$this->etablissements->contains($etablissement)) {
+            $this->etablissements->add($etablissement);
+            $etablissement->setDepartement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEtablissement(Etablissement $etablissement): static
+    {
+        if ($this->etablissements->removeElement($etablissement)) {
+            // set the owning side to null (unless already changed)
+            if ($etablissement->getDepartement() === $this) {
+                $etablissement->setDepartement(null);
+            }
+        }
 
         return $this;
     }
