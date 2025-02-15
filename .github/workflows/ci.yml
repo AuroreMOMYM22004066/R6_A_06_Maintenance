@@ -18,6 +18,9 @@ jobs:
       - name: Create .env file from secret
         run: echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
 
+      - name: Create .env.test file from secret
+        run: echo "TEST_DATABASE_URL=${{ secrets.TEST_DATABASE_URL }}" > .env.test
+
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
