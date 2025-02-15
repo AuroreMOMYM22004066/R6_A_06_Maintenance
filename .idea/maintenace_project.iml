@@ -85,6 +85,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/captainhook/captainhook" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/captainhook/secrets" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianfeldmann/camino" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianfeldmann/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianfeldmann/git" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
