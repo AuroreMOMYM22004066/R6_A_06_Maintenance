@@ -13,6 +13,7 @@ final class HomeController extends AbstractController
     public function index(RegionRepository $regionRepository): Response
     {
         $regions = $regionRepository->findAll();
+
         return $this->render('home/index.html.twig', [
             'regions' => $regions,
         ]);

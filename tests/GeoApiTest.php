@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Tests;
 
 use App\DataFixtures\GeoFixtures;
@@ -26,12 +25,12 @@ final class GeoApiTest extends KernelTestCase
 
         $regionsData = [
             ['code' => '11', 'nom' => 'Île-de-France'],
-            ['code' => '84', 'nom' => 'Auvergne-Rhône-Alpes']
+            ['code' => '84', 'nom' => 'Auvergne-Rhône-Alpes'],
         ];
 
         $departmentsData = [
             ['code' => '75', 'nom' => 'Paris', 'codeRegion' => '11'],
-            ['code' => '69', 'nom' => 'Rhône', 'codeRegion' => '84']
+            ['code' => '69', 'nom' => 'Rhône', 'codeRegion' => '84'],
         ];
 
         $responseMockRegions->method('toArray')->willReturn($regionsData);
