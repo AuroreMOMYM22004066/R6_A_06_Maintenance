@@ -21,11 +21,14 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
+      - name: Display configuration files
+        run: cat config/packages/*
+
       - name: Run PHP CS Fixer
         run: vendor/bin/php-cs-fixer fix --dry-run --diff
 
       - name: Run cache clear
-        run: php bin/console cache:clear
+        run: php bin/console cache:clear --env=dev --no-warmup -vvv
 
       - name: Run tests
         run: vendor/bin/phpunit
