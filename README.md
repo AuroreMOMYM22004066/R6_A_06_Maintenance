@@ -1,18 +1,35 @@
+<div align=center>
+  
 # Projet R6_A_06_Maintenance
 
+</div>
+<div align="center">
+  <br>
+  <a href="https://www.php.net/manual/en/"><kbd> <br> PHP doc <br> </kbd></a>&ensp;&ensp;
+  <a href="https://symfony.com/doc/current/index.html"><kbd> <br> Symfony doc <br> </kbd></a>&ensp;&ensp;
+  <a href="https://getcomposer.org/doc/"><kbd> <br> Composer doc <br> </kbd></a>&ensp;&ensp;
+</div><br>
+
 ## Description
-Reprise et maintenance d'un projet existant en PHP.
+Reprise et maintenance d'un projet existant en PHP. <br>
+- Récupérer le projet original :
+```bash
+git clone https://github.com/AuroreMOMYM22004066/Ugsel_Project
+```
+<br>
+
+- Documentation du projet original :<br>
+<a href="https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance/blob/master/UgselWeb-Documentation.pdf">guide utilisateur</a> <br>
+<a href="https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance/blob/master/UgselWeb-Documentation-Admin.pdf">guide admin</a>
+
+
 
 ## Technologies Utilisées
-- PHP
-- Symfony
-- MySQL
-- Composer
 
-## Prérequis
-- PHP ≥ 7.4
-- Composer
-- MySQL
+* **php:** `8.2.12`
+* **symfony:** `7.2.2`
+* **mysql:** `8.0.41`
+* **composer:** `2.7.9`
 
 ## Installation
 
@@ -40,7 +57,7 @@ Reprise et maintenance d'un projet existant en PHP.
 
 5. **Démarrer le serveur de développement**
     ```bash
-    symfony server
+    symfony serve
     ```
 
 ## Utilisation
@@ -50,7 +67,7 @@ Reprise et maintenance d'un projet existant en PHP.
     symfony console make:migration
     ```
 
-- **Exécuter les migrations de base de données**
+- **Exécuter les migrations vers la base de données**
     ```bash
     symfony console doctrine:migrations:migrate
     ```
