@@ -14,7 +14,7 @@
                     {% for region in regions[:(regions|length // 2)] %}
                         <li>
                             <a href="{{ path('app_region_show', {'id': region.id}) }}" class="text-decoration-none">
-                                <img src="/images/ugsel_logo.png" alt="UGSEL logo" class="me-2" width="20" height="20"> 
+                                <img src="../../images/logoun.gif" alt="UGSEL logo" class="me-2" width="20" height="20"> 
                                 {{ region.libelle }}
                             </a>
                         </li>
@@ -26,7 +26,7 @@
                     {% for region in regions[(regions|length // 2):] %}
                         <li>
                             <a href="{{ path('app_region_show', {'id': region.id}) }}" class="text-decoration-none">
-                                <img src="/images/ugsel_logo.png" alt="UGSEL logo" class="me-2" width="20" height="20"> 
+                                <img src="../../images/logoun.gif" alt="UGSEL logo" class="me-2" width="20" height="20"> 
                                 {{ region.libelle }}
                             </a>
                         </li>
