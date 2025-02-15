@@ -22,7 +22,18 @@ git clone https://github.com/AuroreMOMYM22004066/Ugsel_Project
 <a href="https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance/blob/master/UgselWeb-Documentation.pdf">guide utilisateur</a> <br>
 <a href="https://github.com/AuroreMOMYM22004066/R6_A_06_Maintenance/blob/master/UgselWeb-Documentation-Admin.pdf">guide admin</a>
 
+## Branche Github 
 
+```md
+master (Branch de dev)
+      ↓     
+Test (Branche de test)
+      ↓
+prod (Branch de production)
+      ↓
+```
+
+Les autre branche dependande de master pour le dev comme database ou styles qui on était crée a des fin de dev
 
 ## Technologies Utilisées
 
@@ -45,7 +56,10 @@ git clone https://github.com/AuroreMOMYM22004066/Ugsel_Project
     ```
 
 3. **Configurer la base de données**
+    D'abord crée le .env
     Modifier le fichier .env avec vos informations de base de données
+    
+    Pour ce qui est des test c est pareil faut crée le .env.test et mettre vottre bd
 
 
 4. **Créer et mettre à jour la base de données**
