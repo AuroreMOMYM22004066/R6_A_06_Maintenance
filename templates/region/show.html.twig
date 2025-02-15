@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ region.libelle }}{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>{{ region.libelle }}</h1>
+    
+    <h2>Départements</h2>
+    <div class="list-group">
+        {% for departement in region.departements %}
+            <div class="list-group-item">
+                {{ departement.code }} - {{ departement.libelle }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ path('app_home') }}" class="btn btn-primary mt-3">
+        Retour à l'accueil
+    </a>
+</div>
+{% endblock %}

@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil - UGSEL Web{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/ayzem/PhpstormProjects/R6_A_06_Maintenance/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/home/ayzem/PhpstormProjects/R6_A_06_Maintenance/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+    <div class="container mt-4 text-center">
+        <h1 class="mb-3">Bienvenue dans UGSEL Web</h1>
+        <h2 class="mb-4">L'espace d'inscription aux compétitions Ugsel</h2>
+        <p>Accédez à l'UGSEL Régionale de votre choix en cliquant sur son nom...</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    {% for region in regions[:(regions|length // 2)] %}
+                        <li>
+                            <a href="{{ path('app_region_show', {'id': region.id}) }}" class="text-decoration-none">
+                                <img src="/images/ugsel_logo.png" alt="UGSEL logo" class="me-2" width="20" height="20"> 
+                                {{ region.libelle }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    {% for region in regions[(regions|length // 2):] %}
+                        <li>
+                            <a href="{{ path('app_region_show', {'id': region.id}) }}" class="text-decoration-none">
+                                <img src="/images/ugsel_logo.png" alt="UGSEL logo" class="me-2" width="20" height="20"> 
+                                {{ region.libelle }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

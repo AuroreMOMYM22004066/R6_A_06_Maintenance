@@ -23,6 +23,9 @@ class RegistrationControllerTest extends WebTestCase
         $em = $container->get('doctrine')->getManager();
         $this->userRepository = $container->get(UserRepository::class);
 
+        // Run the schema update command to ensure the database is up-to-date
+        exec('php bin/console doctrine:schema:update --force --env=test');
+
         foreach ($this->userRepository->findAll() as $user) {
             $em->remove($user);
         }
@@ -32,9 +35,22 @@ class RegistrationControllerTest extends WebTestCase
 
     public function testRegister(): void
     {
+        // Ensure the user is logged out
+        $this->client->request('GET', '/logout');
+
         // Register a new user
-        $this->client->request('GET', '/register');
-        self::assertResponseIsSuccessful();
+        $crawler = $this->client->request('GET', '/register');
+        $statusCode = $this->client->getResponse()->getStatusCode();
+        $location = $this->client->getResponse()->headers->get('Location');
+
+        // Debugging information
+        if ($statusCode !== 200) {
+            echo "Status Code: $statusCode\n";
+            echo "Location: $location\n";
+            echo $this->client->getResponse()->getContent();
+        }
+
+        self::assertResponseStatusCodeSame(200); // Ensure the response status code is 200 (OK)
         self::assertPageTitleContains('Register');
 
         $this->client->submitForm('Register', [
@@ -44,7 +60,9 @@ class RegistrationControllerTest extends WebTestCase
         ]);
 
         // Ensure the response redirects after submitting the form, the user exists, and is not verified
-        // self::assertResponseRedirects('/'); @TODO: set the appropriate path that the user is redirected to.
+        self::assertResponseRedirects('/login');
+        $this->client->followRedirect();
+        self::assertPageTitleContains('Login');
         self::assertCount(1, $this->userRepository->findAll());
     }
 }
